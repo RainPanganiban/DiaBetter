@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "733493535724",
+    "project_id": "diabetter-2de5b",
+    "storage_bucket": "diabetter-2de5b.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:733493535724:android:698d9aaeebf7e1502b16c9",
+        "android_client_info": {
+          "package_name": "com.activity.diabetter"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAVsYVyGbOZJ41TFdm0GmdXzccxTqTr-nc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
