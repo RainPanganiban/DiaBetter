@@ -3,5 +3,7 @@
     <array name="preloaded_fonts" translatable="false">
         <item>@font/amaranth_bold_italic</item>
         <item>@font/fruktur_italic</item>
+        <item>@font/geologica</item>
+        <item>@font/geologica_thin</item>
     </array>
 </resources>

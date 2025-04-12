@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,7 +19,7 @@ public class MainMenu extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_menu);
 
-        Button buttonStatisticCheck = findViewById(R.id.buttonStatisticsCheck);
+        ImageButton buttonStatisticCheck = findViewById(R.id.buttonStatisticsCheck);
 
         buttonStatisticCheck.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +28,7 @@ public class MainMenu extends AppCompatActivity {
             }
         });
 
-        Button buttonAlarmMenu = findViewById(R.id.buttonAlarmMenu);
+        ImageButton buttonAlarmMenu = findViewById(R.id.buttonAlarmMenu);
 
         buttonAlarmMenu.setOnClickListener(new View.OnClickListener() {
             @Override
