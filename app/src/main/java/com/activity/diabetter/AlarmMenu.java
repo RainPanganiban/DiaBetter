@@ -42,7 +42,7 @@ public class AlarmMenu extends AppCompatActivity {
         AlarmButtonBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), StatisticsMenu.class));
+                startActivity(new Intent(getApplicationContext(), MainMenu.class));
             }
         });
 
