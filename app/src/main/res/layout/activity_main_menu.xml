@@ -21,25 +21,30 @@
         android:id="@+id/Services"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="8dp"
         android:fontFamily="@font/geologica"
-        android:text="Services"
+        android:text="Services:"
         android:textColor="@color/black"
-        android:textSize="28dp"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Assist" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.321" />
 
     <TextView
         android:id="@+id/HelloUser"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="136dp"
+        android:layout_marginTop="72dp"
+        android:layout_marginBottom="4dp"
         android:fontFamily="@font/geologica"
         android:text="Hello, User!"
         android:textColor="@color/black"
-        android:textSize="28dp"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toTopOf="@+id/Assist"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.16"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,13 +52,12 @@
         android:id="@+id/Assist"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="4dp"
         android:fontFamily="@font/geologica"
         android:text="We are here to assist you!"
         android:textColor="@color/black"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/HelloUser" />
+        app:layout_constraintTop_toBottomOf="@+id/HelloUser"
+        tools:layout_editor_absoluteX="36dp" />
 
     <ImageButton
         android:id="@+id/imageButton"
