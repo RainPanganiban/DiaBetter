@@ -3,9 +3,9 @@ package com.activity.diabetter;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         EditText passwordField = findViewById(R.id.AccountPassword);
         Button loginButton = findViewById(R.id.LoginButton);
         Button signUpButton = findViewById(R.id.signupButton);
-        Button googleSignInButton = findViewById(R.id.googleSignIn);
+        ImageButton googleSignInButton = findViewById(R.id.googleSignIn);
 
         loginButton.setOnClickListener(v -> {
             String email = emailField.getText().toString();
