@@ -7,65 +7,119 @@
     android:layout_height="match_parent"
     tools:context=".AlarmMenu">
 
-    <EditText
-        android:id="@+id/intervalInput"
-        android:layout_width="300dp"
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:hint="Enter Alarm number (min/hour)"
-        android:inputType="number"
+        android:alpha="0.94"
+        android:scaleX="1.2"
+        android:scaleY="1.2"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.381" />
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/circlebg" />
+
+    <EditText
+        android:id="@+id/intervalInput"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/input"
+        android:fontFamily="@font/geologica"
+        android:gravity="center"
+        android:hint="Min/Hour"
+        android:inputType="number"
+        android:minWidth="230dp"
+        android:minHeight="40dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.437" />
 
     <Spinner
         android:id="@+id/unitSpinner"
-        android:layout_width="300dp"
+        android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="55dp"
         android:layout_marginEnd="56dp"
+        android:background="@drawable/spinnercustom"
+        android:fontFamily="@font/geologica"
+        android:minWidth="230dp"
+        android:minHeight="40dp"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/intervalInput"
-        app:layout_constraintVertical_bias="0.027" />
-
-    <Button
-        android:id="@+id/setAlarmBtn"
-        android:layout_width="220dp"
-        android:layout_height="wrap_content"
-        android:text="Set Alarm"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.562" />
+        app:layout_constraintVertical_bias="0.08" />
 
     <Button
         android:id="@+id/cancelAlarmBtn"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/geologica"
         android:text="Cancel Alarm"
+        android:textColor="@color/pastelred"
+        android:textSize="15sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.651" />
+        app:layout_constraintVertical_bias="0.852" />
 
-    <Button
+    <TextView
+        android:id="@+id/countdownText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="100dp"
+        android:layout_marginEnd="100dp"
+        android:fontFamily="@font/geologica"
+        android:text=""
+        android:textColor="@android:color/black"
+        android:textSize="50sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/intervalInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.70" />
+
+    <ImageButton
+        android:id="@+id/setAlarmBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.723"
+        app:srcCompat="@drawable/startbtn" />
+
+    <ImageButton
         android:id="@+id/AlarmButtonBack"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:background="@null"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.049"
+        app:layout_constraintHorizontal_bias="0.079"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023" />
+        app:layout_constraintVertical_bias="0.023"
+        app:srcCompat="@drawable/back" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -15,6 +15,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Spinner;
 import android.widget.Toast;
+import android.os.CountDownTimer;
+import android.widget.TextView;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -22,7 +25,12 @@ public class AlarmMenu extends AppCompatActivity {
 
     EditText intervalInput;
     Spinner unitSpinner;
-    Button setAlarmBtn, cancelAlarmBtn;
+    Button cancelAlarmBtn;
+    TextView countdownText;
+    CountDownTimer countDownTimer;
+
+    ImageButton setAlarmBtn, AlarmButtonBack;
+
 
     public static long intervalMillis;
 
@@ -37,7 +45,9 @@ public class AlarmMenu extends AppCompatActivity {
         unitSpinner = findViewById(R.id.unitSpinner);
         setAlarmBtn = findViewById(R.id.setAlarmBtn);
         cancelAlarmBtn = findViewById(R.id.cancelAlarmBtn);
-        Button AlarmButtonBack = findViewById(R.id.AlarmButtonBack);
+       AlarmButtonBack = findViewById(R.id.AlarmButtonBack);
+        countdownText = findViewById(R.id.countdownText);
+
 
         AlarmButtonBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -90,11 +100,39 @@ public class AlarmMenu extends AppCompatActivity {
             alarmManager.setExactAndAllowWhileIdle(AlarmManager.RTC_WAKEUP, triggerAt, pendingIntent);
 
             Toast.makeText(this, "Alarm set every " + value + " " + unit.toLowerCase(), Toast.LENGTH_SHORT).show();
+
+            // Cancel old timer if running
+            if (countDownTimer != null) {
+                countDownTimer.cancel();
+            }
+
+            // Start countdown
+            countDownTimer = new CountDownTimer(intervalMillis, 1000) {
+                public void onTick(long millisUntilFinished) {
+                    long totalSeconds = millisUntilFinished / 1000;
+                    long hours = totalSeconds / 3600;
+                    long minutes = (totalSeconds % 3600) / 60;
+                    long seconds = totalSeconds % 60;
+                    countdownText.setText(String.format("%02d:%02d:%02d", hours, minutes, seconds));
+                }
+
+                public void onFinish() {
+                    countdownText.setText("Alarm ringing!");
+                }
+            }.start();
         });
+
 
         cancelAlarmBtn.setOnClickListener(v -> {
             AlarmManager alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
             alarmManager.cancel(pendingIntent);
+
+            if (countDownTimer != null) {
+                countDownTimer.cancel();
+                countdownText.setText("");
+
+            }
+
             Toast.makeText(this, "Alarm canceled.", Toast.LENGTH_SHORT).show();
         });
     }

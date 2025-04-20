@@ -56,8 +56,10 @@
         android:fontFamily="@font/geologica"
         android:text="We are here to assist you!"
         android:textColor="@color/black"
-        app:layout_constraintTop_toBottomOf="@+id/HelloUser"
-        tools:layout_editor_absoluteX="36dp" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.15"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/HelloUser" />
 
     <ImageButton
         android:id="@+id/imageButton"
