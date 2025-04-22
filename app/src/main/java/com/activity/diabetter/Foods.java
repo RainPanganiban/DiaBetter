@@ -14,8 +14,6 @@ public class Foods extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_foods); // This should match the XML file name
 
-
-
         ImageButton foodback = findViewById(R.id.backFoodButton);
         foodback.setOnClickListener(new View.OnClickListener() {
             @Override
