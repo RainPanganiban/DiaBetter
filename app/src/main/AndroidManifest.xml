@@ -23,6 +23,10 @@
             android:name=".Signup"
             android:exported="false" />
         <activity
+            android:name="."
+            android:exported="false"
+            />
+        <activity
             android:name=".AlarmMenu"
             android:exported="false" />
         <activity
