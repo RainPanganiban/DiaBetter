@@ -36,5 +36,9 @@ public class MainMenu extends AppCompatActivity {
                 startActivity(new Intent(getApplicationContext(), AlarmMenu.class));
             }
         });
+        
+
+
+
     }
 }
