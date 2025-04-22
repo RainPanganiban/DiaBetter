@@ -46,6 +46,13 @@ public class FoodList extends AppCompatActivity {
             if (!input.isEmpty()) {
                 try {
                     float hba1c = Float.parseFloat(input);
+
+                    // Validate HbA1c value
+                    if (hba1c < 6.5f || hba1c > 12.0f) {
+                        Toast.makeText(this, "Invalid input. Please enter a value between 6.5 and 12.0.", Toast.LENGTH_SHORT).show();
+                        return; // Exit the method if the input is invalid
+                    }
+
                     // Clear previous food items
                     foodItems.clear();
                     foodAdapter.notifyDataSetChanged();
@@ -84,23 +91,95 @@ public class FoodList extends AppCompatActivity {
     private void showRecommendedFoods(float hba1c) {
         foodItems.clear(); // Clear previous items
         if (hba1c >= 6.5f && hba1c <= 7.0f) {
-            foodItems.add(new FoodItem("Whole grains (brown rice)", "Grain", "Low"));
-            foodItems.add(new FoodItem("Green leafy vegetables", "Vegetable", "Low"));
-            foodItems.add(new FoodItem("Lean protein (boiled egg)", "Protein", "Low"));
-            foodItems.add(new FoodItem("Low-sugar fruits (berries)", "Fruit", "Low"));
-            foodItems.add(new FoodItem("Unsweetened green tea", "Beverage", "Low"));
+            foodItems.add(new FoodItem(
+                    "Food: Tinola",
+                    "Main Ingredient: Chicken and Green Papaya",
+                    "Sugar Level: Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Ginisang Ampalaya",
+                    "Main Ingredient: Ampalaya and Egg",
+                    "Sugar Level: Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Inihaw na Isda",
+                    "Main Ingredient: Fish (Bangus/Tilapia)",
+                    "Sugar Level: Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Brown Rice",
+                    "Main Ingredient: Unpolished Rice",
+                    "Sugar Level: Moderate (watch portion)"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Lumpiang Sariwa",
+                    "Main Ingredient: Fresh Vegetables",
+                    "Sugar Level: Low (without sweet sauce)"
+            ));
         } else if (hba1c > 7.0f && hba1c <= 8.5f) {
-            foodItems.add(new FoodItem("Low-carb vegetables (broccoli)", "Vegetable", "Low"));
-            foodItems.add(new FoodItem("Legumes (lentils)", "Legume", "Medium"));
-            foodItems.add(new FoodItem("Tofu", "Protein", "Low"));
-            foodItems.add(new FoodItem("Complex carbs (¼ cup cooked grains)", "Grain", "Medium"));
-            foodItems.add(new FoodItem("Water", "Beverage", "Low"));
+            foodItems.add(new FoodItem(
+                    "Food: Utan Bisaya",
+                    "Main Ingredient: Mixed Native Vegetables",
+                    "Sugar Level: Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Tokwa’t Baboy",
+                    "Main Ingredient: Tofu and Pork (Tofu-heavy)",
+                    "Sugar Level: Low (no sweet sauce)"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Tortang Talong",
+                    "Main Ingredient: Eggplant and Egg",
+                    "Sugar Level: Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Sinigang na Isda",
+                    "Main Ingredient: Fish and Sour Vegetables",
+                    "Sugar Level: Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Cauliflower Fried Rice",
+                    "Main Ingredient: Cauliflower",
+                    "Sugar Level: Very Low"
+            ));
         } else if (hba1c > 8.5f) {
-            foodItems.add(new FoodItem("Leafy greens", "Vegetable", "Low"));
-            foodItems.add(new FoodItem("High-fat, low-carb foods (avocado)", "Fat", "Low"));
-            foodItems.add(new FoodItem("Protein-rich foods (eggs)", "Protein", "Low"));
-            foodItems.add(new FoodItem("No more than 20–30g carbs per day (very low-carb)", "Carbohydrate", "Very Low"));
-            foodItems.add(new FoodItem("Hydrate with water only", "Beverage", "Low"));
+            foodItems.add(new FoodItem(
+                    "Food: Laing",
+                    "Main Ingredient: Gabi Leaves with Coconut Milk",
+                    "Sugar Level: Very Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Paksiw na Isda",
+                    "Main Ingredient: Fish in Vinegar",
+                    "Sugar Level: Very Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Adobong Sitaw",
+                    "Main Ingredient: String Beans and Garlic",
+                    "Sugar Level: Very Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Egg with Tomatoes and Onions",
+                    "Main Ingredient: Eggs and Vegetables",
+                    "Sugar Level: Very Low"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Avocado Slices with Vinegar",
+                    "Main Ingredient: Avocado",
+                    "Sugar Level: Very Low"
+            ));
         }
 
         foodAdapter.notifyDataSetChanged(); // Notify the adapter to refresh the list
@@ -109,22 +188,134 @@ public class FoodList extends AppCompatActivity {
     private void showFoodsToAvoid(float hba1c) {
         foodItems.clear(); // Clear previous items
         if (hba1c >= 6.5f && hba1c <= 7.0f) {
-            foodItems.add(new FoodItem("White rice", "Grain", "High"));
-            foodItems.add(new FoodItem("White bread", "Grain", "High"));
-            foodItems.add(new FoodItem("Sugary drinks", "Beverage", "High"));
-            foodItems.add(new FoodItem("High-sugar snacks (candies, cakes)", "Snack", "High"));
+            foodItems.add(new FoodItem(
+                    "Food: White Rice",
+                    "Main Ingredient: Grain",
+                    "Sugar Level: High"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: White Bread",
+                    "Main Ingredient: Grain",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Fruit Juices (Even Natural)",
+                    "Main Ingredient: Beverage",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Arroz Caldo",
+                    "Main Ingredient: Glutinous Rice",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Kakanin (Puto, Bibingka, Suman)",
+                    "Main Ingredient: Glutinous Rice and Sugar",
+                    "Sugar Level: High"
+            ));
         } else if (hba1c > 7.0f && hba1c <= 8.5f) {
-            foodItems.add(new FoodItem("Fruit juices (even natural)", "Beverage", "High"));
-            foodItems.add(new FoodItem("Sweetened dairy products", "Dairy", "High"));
-            foodItems.add(new FoodItem("Instant noodles", "Snack", "High"));
-            foodItems.add(new FoodItem("Processed snacks", "Snack", "High"));
-            foodItems.add(new FoodItem("Sweet sauces (ketchup, barbecue)", "Condiment", "High"));
+            foodItems.add(new FoodItem(
+                    "Food: High-Sugar Snacks (Candies, Cakes)",
+                    "Main Ingredient: Snack",
+                    "Sugar Level: High"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Instant Noodles",
+                    "Main Ingredient: Snack",
+                    "Sugar Level: High"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Processed Snacks",
+                    "Main Ingredient: Snack",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Sweetened Dairy Products",
+                    "Main Ingredient: Dairy",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Sweet Sauces (Ketchup, Barbecue)",
+                    "Main Ingredient: Condiment",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Pancit Canton (Instant or Sauced)",
+                    "Main Ingredient: Noodles with Sauce",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Ensaymada",
+                    "Main Ingredient: Bread with Butter and Sugar",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Leche Flan",
+                    "Main Ingredient: Condensed Milk and Sugar",
+                    "Sugar Level: High"
+            ));
         } else if (hba1c > 8.5f) {
-            foodItems.add(new FoodItem("All fruits except minimal berries", "Fruit", "High"));
-            foodItems.add(new FoodItem("All sugar-sweetened products", "Snack", "High"));
-            foodItems.add(new FoodItem("Breads, noodles, rice, sweet potatoes, corn", "Grain", "High"));
-            foodItems.add(new FoodItem("Milk tea, soda, flavored drinks", "Beverage", "High"));
-            foodItems.add(new FoodItem("Processed food", "Food", "High"));
+            foodItems.add(new FoodItem(
+                    "Food: Breads, Noodles, Rice, Sweet Potatoes, Corn",
+                    "Main Ingredient: Grain",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Sugary Drinks",
+                    "Main Ingredient: Beverage",
+                    "Sugar Level: High"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Milk Tea, Soda, Flavored Drinks",
+                    "Main Ingredient: Beverage",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: All Fruits Except Minimal Berries",
+                    "Main Ingredient: Fruit",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: All Sugar-Sweetened Products",
+                    "Main Ingredient: Snack",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Processed Food",
+                    "Main Ingredient: Mixed/Packaged",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Halo-Halo",
+                    "Main Ingredient: Mixed Sweet Ingredients and Sugar",
+                    "Sugar Level: High"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Ube Halaya",
+                    "Main Ingredient: Purple Yam and Condensed Milk",
+                    "Sugar Level: High"
+            ));
+
+            foodItems.add(new FoodItem(
+                    "Food: Turon (Banana Lumpia with Sugar)",
+                    "Main Ingredient: Banana and Caramelized Sugar",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Pan de Coco",
+                    "Main Ingredient: Coconut Filling and Sweet Bread",
+                    "Sugar Level: High"
+            ));
+            foodItems.add(new FoodItem(
+                    "Food: Ice Cream (Commercial Brands)",
+                    "Main Ingredient: Sweetened Dairy",
+                    "Sugar Level: High"
+            ));
         }
 
         foodAdapter.notifyDataSetChanged(); // Notify the adapter to refresh the list
