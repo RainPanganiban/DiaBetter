@@ -7,60 +7,111 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:foregroundGravity="left |bottom"
+        android:scaleX="2.5"
+        android:scaleY="2.5"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/statsbg" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="330dp"
+        android:layout_height="370dp"
+        android:background="@drawable/square"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.30" />
 
     <ImageButton
         android:id="@+id/StatsbackBtn"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_gravity="end"
-        android:background="?attr/selectableItemBackgroundBorderless"
+        android:background="@drawable/back"
         android:contentDescription="Back"
-        android:src="@android:drawable/ic_menu_close_clear_cancel"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.08"
+        app:layout_constraintHorizontal_bias="0.078"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.023"
+        app:layout_constraintVertical_bias="0.062"
         tools:ignore="TouchTargetSizeCheck" />
 
     <com.github.mikephil.charting.charts.BarChart
         android:id="@+id/chart"
-        android:layout_width="350dp"
-        android:layout_height="400dp"
+        android:layout_width="300dp"
+        android:layout_height="300dp"
         android:layout_weight="1"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.491"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.238" />
+        android:background="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="@+id/view"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintVertical_bias="0.2" >
+
+    </com.github.mikephil.charting.charts.BarChart>
 
     <EditText
         android:id="@+id/ha1cInput"
-        android:layout_width="300dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
+        android:background="@drawable/input"
+        android:fontFamily="@font/geologica"
         android:hint="Enter HbA1c (6.5 to 12)"
+        android:alpha="0.90"
         android:inputType="numberDecimal"
-        android:minHeight="48dp"
+        android:minWidth="230dp"
+        android:minHeight="40dp"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.779" />
+        app:layout_constraintTop_toBottomOf="@+id/view"
+        app:layout_constraintVertical_bias="0.2" />
 
     <Button
         android:id="@+id/submitBtn"
         android:layout_width="100dp"
-        android:layout_height="50dp"
+        android:layout_height="45dp"
+        android:fontFamily="@font/geologica"
+        android:backgroundTint="#A23131"
         android:text="Submit"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.876" />
+        app:layout_constraintTop_toBottomOf="@+id/ha1cInput"
+        app:layout_constraintVertical_bias="0.2" />
+
+    <TextView
+        android:id="@+id/desc"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/geologica_thin"
+        android:gravity="center"
+        android:text="HbA1c is a blood test for average blood sugar over 2-3 months, used to diagnose and monitor diabetes."
+        android:textColor="@color/white"
+        android:textSize="10dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toBottomOf="@+id/chart"
+        app:layout_constraintVertical_bias="0.046" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -152,12 +152,12 @@ public class StatisticsMenu extends AppCompatActivity {
 
     private void updateGraph() {
         BarDataSet ha1cDataSet = new BarDataSet(ha1cEntries, "HbA1c");
-        ha1cDataSet.setColor(Color.parseColor("#3F51B5"));
+        ha1cDataSet.setColor(Color.parseColor("#A23131"));
         ha1cDataSet.setValueTextColor(Color.BLACK);
         ha1cDataSet.setValueTextSize(12f);
 
         BarDataSet glucoseDataSet = new BarDataSet(glucoseEntries, "Avg Glucose");
-        glucoseDataSet.setColor(Color.parseColor("#FF5722"));
+        glucoseDataSet.setColor(Color.parseColor("#6C1C1C"));
         glucoseDataSet.setValueTextColor(Color.BLACK);
         glucoseDataSet.setValueTextSize(12f);
 
