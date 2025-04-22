@@ -50,7 +50,7 @@ public class AlarmReceiver extends BroadcastReceiver {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
                 vibrator.vibrate(android.os.VibrationEffect.createWaveform(pattern, amplitudes, 0));
             } else {
-                vibrator.vibrate(pattern, 0);
+                vibrator.vibrate(pattern, 9);
             }
 
 

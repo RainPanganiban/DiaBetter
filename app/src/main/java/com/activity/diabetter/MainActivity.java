@@ -28,6 +28,15 @@ public class MainActivity extends AppCompatActivity {
 
         auth = FirebaseAuth.getInstance();
 
+        // Check if the user is already signed in
+        FirebaseUser currentUser = auth.getCurrentUser();
+        if (currentUser != null) {
+            // User is signed in, navigate to MainMenu
+            startActivity(new Intent(MainActivity.this, MainMenu.class));
+            finish();
+            return;  // Exit onCreate method to prevent showing login screen
+        }
+
         EditText emailField = findViewById(R.id.EmailAccount);
         EditText passwordField = findViewById(R.id.AccountPassword);
         Button loginButton = findViewById(R.id.LoginButton);
@@ -60,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
         );
 
         GoogleSignInOptions gso = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
-                .requestIdToken(getString(R.string.default_web_client_id)) // Comes from google-services.json
+                .requestIdToken(getString(R.string.default_web_client_id))
                 .requestEmail()
                 .build();
 
@@ -94,12 +103,13 @@ public class MainActivity extends AppCompatActivity {
         auth.signInWithCredential(credential)
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(this, "Google Sign-In successful", Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(this, MainMenu.class));
+                        // Go to your MainMenu activity
+                        startActivity(new Intent(MainActivity.this, MainMenu.class));
                         finish();
                     } else {
-                        Toast.makeText(this, "Firebase Auth Failed", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(this, "Firebase Authentication Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
     }
+
 }
