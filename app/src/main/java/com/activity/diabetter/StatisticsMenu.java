@@ -29,6 +29,8 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
+import com.github.mikephil.charting.animation.Easing;
+
 
 
 import java.util.ArrayList;
@@ -89,34 +91,38 @@ public class StatisticsMenu extends AppCompatActivity {
 
         DatabaseReference finalDbRef = dbRef;
         submitBtn.setOnClickListener(v -> {
+            String input = ha1cInput.getText().toString().trim();
 
-            String input = ha1cInput.getText().toString();
             if (!input.isEmpty()) {
-                float ha1c = Float.parseFloat(input);
-                if (ha1c < 6.5f || ha1c > 12f) {
-                    Toast.makeText(this, "HbA1c must be between 6.5 and 12", Toast.LENGTH_SHORT).show();
-                    return;
+                try {
+                    float ha1c = Float.parseFloat(input);
+
+                    if (ha1c < 6.5f || ha1c > 12f) {
+                        Toast.makeText(this, "HbA1c must be between 6.5 and 12", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    // Save to Firebase
+                    finalDbRef.child("latest").setValue(ha1c)
+                            .addOnSuccessListener(unused -> Log.d("Firebase", "Saved HbA1c to Firebase"))
+                            .addOnFailureListener(e -> Log.e("Firebase", "Failed to save HbA1c", e));
+
+                    // Clear graph data
+                    ha1cEntries.clear();
+                    glucoseEntries.clear();
+                    index = 0;
+
+                    // Add new value
+                    addToGraph(ha1c);
+
+                } catch (NumberFormatException e) {
+                    Toast.makeText(this, "Invalid number", Toast.LENGTH_SHORT).show();
                 }
-                finalDbRef.child("latest").setValue(ha1c)
-                        .addOnSuccessListener(unused -> Log.d("Firebase", "Saved HbA1c to Firebase"))
-                        .addOnFailureListener(e -> Log.e("Firebase", "Failed to save HbA1c", e));
-                float groupSpace = 0.3f;
-                float barSpace = 0.05f; // space between bars in a group
-                float barWidth = 0.3f;  // width of each bar
-                float glucose = (28.7f * ha1c) - 46.7f;
-                float xVal = index * (barWidth * 2 + groupSpace); // compute x for spacing
-                ha1cEntries.add(new BarEntry(xVal, ha1c));
-                glucoseEntries.add(new BarEntry(xVal + barWidth + barSpace, glucose)); // offset for second bar
-
-
-
-                ha1cEntries.add(new BarEntry(index, ha1c));
-                glucoseEntries.add(new BarEntry(index, glucose));
-                index++;
-
-                updateGraph();
+            } else {
+                Toast.makeText(this, "Please enter a HbA1c value", Toast.LENGTH_SHORT).show();
             }
         });
+
     }
 
     private void setupChart() {
@@ -168,19 +174,24 @@ public class StatisticsMenu extends AppCompatActivity {
         chart.getXAxis().setAxisMaximum(0f + groupWidth * index);
         chart.groupBars(0f, groupSpace, barSpace); // start at x=0
 
+        chart.animateY(1500, Easing.EaseInOutBounce);
+
         chart.invalidate();
     }
 
     private void addToGraph(double ha1c) {
-        double glucose = (ha1c * 28.7) - 46.7;
-        float xVal = index * 1.0f;
+        ha1cEntries.clear();
+        glucoseEntries.clear();
+        index = 0;
 
-        ha1cEntries.add(new BarEntry(xVal, (float) ha1c));
-        glucoseEntries.add(new BarEntry(xVal + 0.4f, (float) glucose));
+        double glucose = (ha1c * 28.7) - 46.7;
+        ha1cEntries.add(new BarEntry(0f, (float) ha1c));
+        glucoseEntries.add(new BarEntry(0.4f, (float) glucose));
         index++;
 
         updateGraph();
     }
+
 
 
 }
