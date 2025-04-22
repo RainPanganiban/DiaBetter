@@ -1,10 +1,16 @@
 package com.activity.diabetter;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Toast;
+import android.widget.Button;
+import android.widget.ImageButton;
+
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -23,11 +29,14 @@ public class FoodList extends AppCompatActivity {
     private FoodItemAdapter foodAdapter;
     private List<FoodItem> foodItems;
 
+    private ImageButton imageButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_food_list);
+        setContentView(R.layout.activity_food_list);;
 
+        imageButton = findViewById(R.id.back2);
         hba1cInput = findViewById(R.id.hba1cInput);
         submitBtn = findViewById(R.id.submitBtn);
         buttonRecommended = findViewById(R.id.buttonRecommended);
@@ -39,6 +48,13 @@ public class FoodList extends AppCompatActivity {
         foodItems = new ArrayList<>();
         foodAdapter = new FoodItemAdapter(foodItems);
         recyclerView.setAdapter(foodAdapter);
+
+        imageButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), MainMenu.class));
+            }
+        });
 
         submitBtn.setOnClickListener(v -> {
             String input = hba1cInput.getText().toString().trim();
@@ -130,4 +146,4 @@ public class FoodList extends AppCompatActivity {
         foodAdapter.notifyDataSetChanged(); // Notify the adapter to refresh the list
     }
 
-    }
+}

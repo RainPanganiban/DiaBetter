@@ -23,11 +23,11 @@
         android:id="@+id/EmailAccount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:background="@drawable/input"
         android:ems="10"
-        android:fontFamily="@font/geologica"
         android:hint="Email Account"
+        android:fontFamily="@font/geologica"
         android:inputType="textEmailAddress"
+        android:background="@drawable/input"
         android:minWidth="230dp"
         android:minHeight="40dp"
         android:paddingStart="12dp"
@@ -90,7 +90,7 @@
         app:layout_constraintVertical_bias="0.172" />
 
     <ImageButton
-        android:id="@+id/backButton"
+        android:id="@+id/back2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"

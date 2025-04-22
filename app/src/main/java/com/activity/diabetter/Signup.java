@@ -7,15 +7,11 @@ import android.widget.EditText;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.graphics.Insets;
-import androidx.core.view.ViewCompat;
-import androidx.core.view.WindowInsetsCompat;
+
 import android.content.Intent;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
 
-import com.google.firebase.Firebase;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class Signup extends AppCompatActivity {
@@ -54,7 +50,7 @@ public class Signup extends AppCompatActivity {
                     });
         });
 
-        ImageView back = findViewById(R.id.backButton);
+        ImageView back = findViewById(R.id.back2);
         back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
