@@ -49,6 +49,7 @@ dependencies {
     implementation("com.google.firebase:firebase-core:21.1.1")
 
 
+
 }
 
 apply(plugin = "com.google.gms.google-services")
