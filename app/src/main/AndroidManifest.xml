@@ -20,6 +20,9 @@
         android:theme="@style/Theme.DiaBetter.Light"
         tools:targetApi="31">
         <activity
+            android:name=".food"
+            android:exported="false" />
+        <activity
             android:name=".Signup"
             android:exported="false" />
         <activity

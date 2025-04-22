@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AlarmMenu">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:scaleX="2"
+        android:scaleY="2"
+        android:src="@drawable/blood"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.109" />
+
+    <EditText
+        android:id="@+id/searchBar"
+        android:layout_width="270dp"
+        android:layout_height="36dp"
+        android:background="@drawable/customsearchbar"
+        android:fontFamily="@font/geologica"
+        android:hint="Search..."
+        android:paddingLeft="40dp"
+        android:textColor="@color/cardview_shadow_end_color"
+        android:textColorHint="@android:color/white"
+        android:textSize="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.283" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/searchBar"
+        app:layout_constraintEnd_toEndOf="@+id/searchBar"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/searchBar"
+        app:layout_constraintTop_toTopOf="@+id/searchBar"
+        app:srcCompat="@drawable/magnifyingglass" />
+
+    <Button
+        android:id="@+id/btnRecommend"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/geologica"
+        android:padding="0dp"
+        android:text="Meals for You"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.266"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.393" />
+
+    <Button
+        android:id="@+id/btnAvoid"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="20dp"
+        android:background="@android:color/transparent"
+        android:fontFamily="@font/geologica"
+        android:padding="0dp"
+        android:text="Foods to Avoid"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btnRecommend"
+        app:layout_constraintStart_toEndOf="@+id/btnRecommend"
+        app:layout_constraintTop_toTopOf="@+id/btnRecommend"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/glucoseLvl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="HbA1c Level: 7%"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.227" />
+
+    <ScrollView
+        android:id="@+id/scrollView2"
+        android:layout_width="409dp"
+        android:layout_height="423dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/sex"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/geologica"
+                android:paddingLeft="10dp"
+                android:text="Chicken Adobo (Low Glucose Focus)"
+                android:textColor="@color/reddish" />
+
+            <TextView
+                android:id="@+id/secx"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/geologica_thin"
+                android:paddingLeft="10dp"
+                android:text="Main Ingredients: \nChicken, soy sauce (low-sodium, if possible), vinegar, garlic, peppercorns, bay leaf\nSugar Content:\nLow (less than 1g to 3-5g per serving), higher if sugar is added."
+                android:textColor="@color/reddish" />
+
+            <TextView
+                android:id="@+id/isdaa"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/geologica"
+                android:paddingLeft="10dp"
+                android:text="Grilled Fish (Inihaw na Isda)"
+                android:textColor="@color/reddish" />
+
+            <TextView
+                android:id="@+id/isda"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/geologica_thin"
+                android:paddingLeft="10dp"
+                android:text="Main Ingredients: \nWhole fish (e.g., tilapia, milkfish/bangus, mackerel/tulingan), salt, pepper, lemon or calamansi.\nSugar Content:\nVery Low (less than 1g per serving). Naturally occurring sugars in fish are minimal."
+                android:textColor="@color/reddish" />
+
+            <TextView
+                android:id="@+id/tt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/geologica"
+                android:paddingLeft="10dp"
+                android:text="Grilled Fish (Inihaw na Isda)"
+                android:textColor="@color/reddish" />
+
+            <TextView
+                android:id="@+id/ttq"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/geologica_thin"
+                android:paddingLeft="10dp"
+                android:text="Main Ingredients: \nWhole fish (e.g., tilapia, milkfish/bangus, mackerel/tulingan), salt, pepper, lemon or calamansi.\nSugar Content:\nVery Low (less than 1g per serving). Naturally occurring sugars in fish are minimal."
+                android:textColor="@color/reddish" />
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
