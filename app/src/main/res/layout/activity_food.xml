@@ -115,7 +115,7 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/sex"
+                android:id="@+id/foodName1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/geologica"
@@ -124,7 +124,7 @@
                 android:textColor="@color/reddish" />
 
             <TextView
-                android:id="@+id/secx"
+                android:id="@+id/foodInfo1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/geologica_thin"
@@ -133,7 +133,7 @@
                 android:textColor="@color/reddish" />
 
             <TextView
-                android:id="@+id/isdaa"
+                android:id="@+id/foodName2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/geologica"
@@ -142,7 +142,7 @@
                 android:textColor="@color/reddish" />
 
             <TextView
-                android:id="@+id/isda"
+                android:id="@+id/foodInfo2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/geologica_thin"
@@ -151,7 +151,7 @@
                 android:textColor="@color/reddish" />
 
             <TextView
-                android:id="@+id/tt"
+                android:id="@+id/foodName3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/geologica"
@@ -160,7 +160,7 @@
                 android:textColor="@color/reddish" />
 
             <TextView
-                android:id="@+id/ttq"
+                android:id="@+id/foodInfo3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/geologica_thin"
