@@ -61,7 +61,6 @@ public class StatisticsMenu extends AppCompatActivity {
 
         dbRef = FirebaseDatabase.getInstance().getReference("hba1c");
 
-// Load saved value from Firebase
         dbRef.child("latest").addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
