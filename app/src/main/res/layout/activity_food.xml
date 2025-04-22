@@ -56,6 +56,7 @@
         android:layout_width="100dp"
         android:layout_height="30dp"
         android:layout_marginStart="44dp"
+        android:layout_marginEnd="84dp"
         android:background="@android:color/transparent"
         android:fontFamily="@font/geologica"
         android:padding="0dp"
@@ -63,6 +64,7 @@
         android:textColor="@color/black"
         android:textSize="12sp"
         app:layout_constraintBottom_toBottomOf="@+id/btnRecommend"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/btnRecommend"
         app:layout_constraintTop_toTopOf="@+id/btnRecommend"
         app:layout_constraintVertical_bias="0.0" />
@@ -82,7 +84,7 @@
         app:layout_constraintHorizontal_bias="0.266"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.349" />
+        app:layout_constraintVertical_bias="0.355" />
 
     <TextView
         android:id="@+id/glucoseLvl"
